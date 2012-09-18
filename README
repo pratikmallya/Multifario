@@ -1,4 +1,8 @@
-Manifold.
+                                                                        MULTIFARIO
+                                                                        ==========
+NOTE: This code is written by Mike Henderson and is available at
+Sourceforge(http://multifario.sourceforge.net/). This copy is here for me to
+play around with.
 
 This is the subroutine library "multifario", for multiparameter continuation and
 invariant manifolds. It is a preliminary release.
