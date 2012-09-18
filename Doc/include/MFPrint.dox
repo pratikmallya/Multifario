@@ -1,0 +1,39 @@
+/* 
+    @(#)MFPrint.h	1.4
+    02/07/24 09:33:25
+   
+    PROGRAM NAME:  Manifold
+   
+    (c) COPYRIGHT INTERNATIONAL BUSINESS MACHINES
+    CORPORATION 12/1/2001.  ALL RIGHTS RESERVED.
+   
+    Please refer to the LICENSE file in the top directory
+
+*/
+/*      author: Mike Henderson mhender@watson.ibm.com */
+/*      date:   February 24, 1999                     */
+
+#ifndef __MFPRINT_H__
+#define __MFPRINT_H__
+#include <MFBase.h>
+
+#include <stdio.h>
+
+#include <MFKVector.h>
+#include <MFNVector.h>
+#include <MFNKMatrix.h>
+#include <MFChart.h>
+#include <MFPolytope.h>
+#include <MFAtlas.h>
+#include <MFBinaryTree.h>
+
+void MFPrintKVector(FILE*,MFKVector);
+void MFPrintNVector(FILE*,MFNVector);
+void MFPrintNKMatrix(FILE*,MFNKMatrix);
+void MFPrintChart(FILE*,MFChart);
+void MFPrintPolytope(FILE*,MFPolytope);
+void MFPrintPolytopeTerse(FILE*,MFPolytope);
+void MFPrintAtlas(FILE*,MFAtlas);
+void MFPrintAtlasFaceList(FILE*,MFAtlas);
+void MFPrintBinaryTree(FILE*,MFBinaryTree);
+#endif

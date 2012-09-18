@@ -1,0 +1,31 @@
+To install multifario:
+
+   download the gzipped tar file. If you require another type of file please email the author mhender@us.ibm.com
+
+   extract the files. For example:
+
+          tar -zxf multifario.v0.9g.tar.gz
+
+   run configure
+
+	  aclocal
+	  automake
+	  autoconf
+	  ./configure --with-lapack=dirname1 --with-blas=dirname2
+
+   where dirname1 is the directory in which lib/libpack.a and dirname2 where lib/libblas.a can be found 
+   make the libraries and example programs.
+
+	make
+
+   if you want to install the libraries, includes and binaries somewhere else, you can use something like
+
+        ./configure --prefix=/usr/local
+
+   and then
+
+        make install
+
+   will copy them there. "./configure --help" explains all this. Or just copy the things yourself.
+
+contact: mhender@us.ibm.com

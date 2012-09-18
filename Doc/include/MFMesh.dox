@@ -1,0 +1,5 @@
+MFEnumDualPolytope GenerateMeshOnPolygon(int,int,double*,int,int*,int,int*,double);
+MFEnumDualPolytope GenerateMeshInPolyhedron(int,double*,int,int*,int,int*,int**,int,int*,int**,double);
+MFEnumDualPolytope GenerateMeshOnSphere(int,double*,double);
+MFEnumDualPolytope GenerateMeshOnSphere3d(int,double*,double);
+

@@ -1,0 +1,8 @@
+#ifndef __MFPOV_H__
+#define __MFPOV_H__
+
+struct MFEnumDualPolytopeSt;
+
+void MFDualPolytopeToPOVFile(char *name,struct MFEnumDualPolytopeSt*);
+void MFAtlasToPOV(MFAtlas,char *name);
+#endif

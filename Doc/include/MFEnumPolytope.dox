@@ -1,0 +1,45 @@
+/* 
+    @(#)MFEnumPolytope.h	1.2
+    02/04/19 14:41:09
+   
+    PROGRAM NAME:  Manifold
+   
+    (c) COPYRIGHT INTERNATIONAL BUSINESS MACHINES
+    CORPORATION 12/1/2001.  ALL RIGHTS RESERVED.
+   
+    Please refer to the LICENSE file in the top directory
+
+*/
+/*      author: Mike Henderson mhender@watson.ibm.com */
+
+#ifndef __MFENUMPOLYTOPE_H__
+#define __MFENUMPOLYTOPE_H__
+#include <MFBase.h>
+
+#include <stdio.h>
+#include <stdarg.h>
+#include <MFPolytope.h>
+#include <MFAtlas.h>
+#include <MFKVector.h>
+
+struct MFEnumPolytopeSt;
+typedef struct MFEnumPolytopeSt *MFEnumPolytope;
+
+MFEnumPolytope MFEnumeratePolytope(MFPolytope);
+MFEnumPolytope MFEnumerateAtlas(MFAtlas);
+void MFEnumerate(MFEnumPolytope);
+void MFFreeEnumPolytope(MFEnumPolytope);
+
+long MFEnumPolytopeNumberOfVertices(MFEnumPolytope);
+MFKVector MFEnumPolytopeVertex(MFEnumPolytope,long);
+int MFEnumPolytopeNumberOfCells(MFEnumPolytope,int);
+int MFEnumPolytopeNumberOfCellFaces(MFEnumPolytope,int,long);
+long MFEnumPolytopeCellFace(MFEnumPolytope,int,long,int);
+int MFEnumPolytopeNumberOfFaceCells(MFEnumPolytope,int,long);
+long MFEnumPolytopeFaceCell(MFEnumPolytope,int,long,int);
+
+int MFEnumPolytopeDimension(MFEnumPolytope);
+
+int MFEnumPolytopeNumberOfCellIndices(MFEnumPolytope,int,long);
+int MFEnumPolytopeCellIndex(MFEnumPolytope,int,long,int);
+#endif

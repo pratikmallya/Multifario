@@ -1,0 +1,50 @@
+/* 
+    @(#)MFEnumDualPolytope.h	1.2
+    02/04/19 14:41:03
+   
+    PROGRAM NAME:  Manifold
+   
+    (c) COPYRIGHT INTERNATIONAL BUSINESS MACHINES
+    CORPORATION 12/1/2001.  ALL RIGHTS RESERVED.
+   
+    Please refer to the LICENSE file in the top directory
+
+*/
+/*      author: Mike Henderson mhender@watson.ibm.com */
+
+#ifndef __MFENUMDUALPOLYTOPE_H__
+#define __MFENUMDUALPOLYTOPE_H__
+#include <MFBase.h>
+
+#include <stdio.h>
+#include <stdarg.h>
+#include <MFEnumPolytope.h>
+#include <MFPolytope.h>
+#include <MFAtlas.h>
+#include <MFNVector.h>
+
+struct MFEnumDualPolytopeSt;
+typedef struct MFEnumDualPolytopeSt *MFEnumDualPolytope;
+
+struct MFEnumPolytopeSt;
+
+MFEnumDualPolytope MFCreateDualOfEnumPolytope(struct MFEnumPolytopeSt*);
+MFEnumDualPolytope MFEnumDualOfAtlas(MFAtlas);
+
+void MFEnumerateDual(MFEnumDualPolytope);
+void MFPrintEnumDualPolytope(FILE*,MFEnumDualPolytope);
+void MFFreeEnumDualPolytope(MFEnumDualPolytope);
+
+long MFEnumDualPolytopeNumberOfVertices(MFEnumDualPolytope);
+MFNVector MFEnumDualPolytopeVertex(MFEnumDualPolytope,long);
+int MFEnumDualPolytopeNumberOfCells(MFEnumDualPolytope,int);
+int MFEnumDualPolytopeNumberOfCellFaces(MFEnumDualPolytope,int,long);
+long MFEnumDualPolytopeCellFace(MFEnumDualPolytope,int,long,int);
+int MFEnumDualPolytopeNumberOfFaceCells(MFEnumDualPolytope,int,long);
+long MFEnumDualPolytopeFaceCell(MFEnumDualPolytope,int,long,int);
+
+int MFEnumDualPolytopeDimension(MFEnumDualPolytope);
+
+int MFEnumDualPolytopeNumberOfCellIndices(MFEnumDualPolytope,int,long);
+int MFEnumDualPolytopeCellIndex(MFEnumDualPolytope,int,long,int);
+#endif

@@ -1,0 +1,108 @@
+Manifold.
+
+This is the subroutine library "multifario", for multiparameter continuation and
+invariant manifolds. It is a preliminary release.
+
+Download
+
+    Compressed source code:
+
+	http://sourceforge.net/project/showfiles.php?group_id=182074
+
+    CVS:
+
+	From the SourceForge documentation (http://sourceforge.net/docman/display_doc.php?docid=29894&group_id=1)
+
+	The following configuration settings are used to access a SourceForge.net-hosted CVS repository:
+
+		* Hostname: multifario.cvs.sourceforge.net
+		* Port: 2401 (anonymous :pserver: authentication) or 22 (developer :ext: authentication via SSH)
+		* Protocol: :pserver: for anonymous CVS, or :ext: for developers (with SSH for external authentication;
+			export CVS_RSH=ssh)
+		* Repository Path: /cvsroot/multifario
+		* Username: 'anonymous' for anonymous CVS access or your SourceForge.net username for developer CVS access.
+		* Password: There is no password for anonymous CVS access (just hit the enter key when prompted for one).
+			You must generate a SSH key for developer authentication.
+		
+	Firewalls and proxy servers may present a problem in using CVS. Workaround may be possible using this alternate
+			configuration for developer access; contact your ISP or network administrator for assistance if
+			these workarounds do not function for your environment:
+		
+		* Hostname: multifario.cvs.sourceforge.net
+		* Port: 443
+
+
+To install multifario:
+
+   extract the files. For example:
+
+          tar -zxf multifario.v0.9g.tar.gz
+
+   run the bootstrap script for automake
+
+          ./bootstrap
+
+   run configure
+
+	  ./configure --with-lapack=dirname1 --with-blas=dirname2
+
+   where dirname1 is the directory in which lib/libpack.a and dirname2 where lib/libblas.a can be found 
+   make the libraries and example programs.
+
+	make
+
+   if you want to install the libraries, includes and binaries somewhere else, you can use something like
+
+        ./configure --prefix=/usr/local
+
+   and then
+
+        make install
+
+   will copy them there. "./configure --help" explains all this. Or just copy the things yourself.
+
+Documentation:
+
+	Web Site:
+
+		http://multifario.sourceforge.net/
+
+	Users Guide:
+
+	        TeX Source: Doc/MF.tex
+        	PostScript: Doc/MF.ps
+        	PDF:        Doc/MF.pdf
+
+        Reference:
+
+		doxygen: Doc/html/index.html
+
+		Henderson, M. E., "Multiparameter Continuation: Computing Implicitly Defined Surfaces",
+			International Journal of Bifurcation and Chaos, 12(3), 2002, 451--476.
+
+		Henderson, M. E., "Computing Invariant Manifolds by Integrating Fat Trajectories",
+			SIAM J. Appl. Dyn. Sys. 4(4), 2005, 832--882.
+
+Support:
+	mailing lists
+
+		http://lists.sourceforge.net/mailman/listinfo/multifario-announcements
+
+		multifario-announcements-request@lists.sourceforge.net
+	
+		http://lists.sourceforge.net/mailman/listinfo/multifario-general
+
+		multifario-general-request@lists.sourceforge.net
+
+	SoureForge Fora and Bug tracking:
+	
+		Help:		 http://sourceforge.net/forum/forum.php?forum_id=633230
+
+		Open Discussion: http://sourceforge.net/forum/forum.php?forum_id=633229
+
+Multifario is distributed under the "Common Public License", or CPL
+
+	(http://www.opensource.org/licenses/cpl.html).
+
+
+Contact: mhender@us.ibm.com

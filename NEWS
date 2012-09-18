@@ -1,0 +1,21 @@
+
+
+Version v0.9g:    05/1/2009
+
+     We are getting closer to a first official release.
+
+     This new release is a move from autoconf to automake/libtool/autoconf for the installation process. There is also
+        a slight change in the directory structure that was required by this move.
+
+     Several minor bugs have been fixed. In MFAlgebraic there was a typo in a call to dgetrs which caused an abend on some platforms.
+
+     Many thanks to Christos Frouzakis for his thorough testing and detailed reports of problems.
+
+  Things that don't work quite right:
+
+        Saving and reading .atlas files is broken. I've been lazy, and haven't been implementing the routines to read and write the
+         data from the newer objects. However, the .plotfile does everything I ever used the atlas files for, and are much smaller.
+
+        AUTINTMultifario2d and some of the other AUTO examples are still being debugged. I think I've conviced myself that they're
+         really working, but need a little more time. AUTINT uses AUTO itself, so produces auto.* output files. AUTINTMultifario 
+         replaces AUTO's control with multifario, and just uses AUTO's boundary value solvers. (so a .plotfile instead of auto.* files)

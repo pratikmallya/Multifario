@@ -1,0 +1,36 @@
+/* 
+    @(#)MFDrawChartState.h	1.4
+    02/04/19 14:40:50
+   
+    PROGRAM NAME:  Manifold
+   
+    (c) COPYRIGHT INTERNATIONAL BUSINESS MACHINES
+    CORPORATION 12/1/2001.  ALL RIGHTS RESERVED.
+   
+    Please refer to the LICENSE file in the top directory
+
+*/
+/*      author: Mike Henderson mhender@watson.ibm.com */
+
+#ifndef __MFDRAWCHARTSTATE_H__
+#define __MFDRAWCHARTSTATE_H__
+#include <MFBase.h>
+
+#include <MFChart.h>
+struct MFChartStateSt;
+typedef struct MFChartStateSt *MFChartState;
+
+MFChartState MFCreateChartState(MFChart);
+void MFDrawChartFromState(MFChartState);
+MFChartState MFAddChartState(MFChart);
+int MFNChartStates(void);
+void MFClearChartState(MFChartState);
+void MFSetChartStateColor(MFChartState,int,int,int,int);
+void MFGetChartStateColor(MFChartState,int,int*,int*,int*);
+void MFChartStateAddPolygon(MFChartState,int,float*,float*,float*,int);
+void MFChartStateAddPolygonWithNormal(MFChartState,int,float*,float*,float*,float*,int);
+void MFChartStateAddLine(MFChartState,float,float,float,float,float,float);
+MFChartState MFGetChartState(int);
+int MFChartStateChanged(MFChartState);
+void MFFreeDrawCharts(void);
+#endif

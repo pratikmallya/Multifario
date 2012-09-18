@@ -1,0 +1,6 @@
+210. 10. -1.35 1.35 -1.35 1.35 -.6 .6
+ a    b   x0 x1 y0 y1 z0 z1
+
+
+a is the angle of the viewer around the equator
+b is the angle of the viewer up from the equator toward the north pole

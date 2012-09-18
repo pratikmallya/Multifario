@@ -1,0 +1,116 @@
+/*! \defgroup MFVisualization */
+
+/*! \defgroup MFDraw */
+
+/*! \addtogroup MFVisualization
+ *  @{
+ */
+
+/*! \addtogroup MFDraw
+ *  @{
+ */
+
+/*! \class MFDraw 
+ *  \brief A set of utilities for drawin, which represents a neighborhood on a manifold.
+ *
+ *  An MFChart represents an individual chart in the atlas of a manifold.
+ *  The domain of the chart is a spherical ball in a k-dimensional Euclidean space, where k is the dimension
+ *  of the manifold.
+ *  The chart mapping maps from the domain of the chart onto the manifold, which is embedded in an n-dimensional
+ *  Euclidean space, called the embedding space.
+ *  In addition, each chart has a k-dimensional polyhedron (or polytope) which approximately partitions
+ *  the manifold into disjoint pieces, and allows the boundary of the manifold to be determined.
+ */
+
+/*! \fn void MFDrawInitialize(float alpha, float beta, MFErrorHandler e);
+ *  \brief Sets the view point and initializes the graphics environment (the SH software renderer, which is part of multifario).
+ *
+ *  \param alpha The angle around the equator. Zero is the x-axis.
+ *  \param beta The angle up from the equator.
+ *  \param e An error handler.
+ */
+void MFDrawInitialize(float alpha, float beta, MFErrorHandler e);
+
+/*! \fn void MFDrawInitializeFromFile(char *name, MFErrorHandler e);
+ *  \brief Reads the view point and limits from a file, and initializes the graphics environment (the SH software renderer,
+ *              which is part of multifario).
+ *
+ *  \param name The name of the file (an extension of .view is added).
+ *  \param e An error handler.
+ */
+void MFDrawInitializeFromFile(char *name, MFErrorHandler e);
+
+/*! \fn void MFDrawInitializeCube(float alpha, float beta, float xmin, float xmax, float ymin, float ymax, float zmin, float zmax, MFErrorHandler e);
+ *  \brief Setes the view point and limits, initializes the graphics environment (the SH software renderer,
+ *              which is part of multifario), and draws the edges of a cube bounding the limits.
+ *
+ *  \param alpha The angle around the equator. Zero is the x-axis.
+ *  \param beta The angle up from the equator.
+ *  \param xmin The lower limit of the first coordinate.
+ *  \param xmax The upper limit of the first coordinate.
+ *  \param ymin The lower limit of the second coordinate.
+ *  \param ymax The upper limit of the second coordinate.
+ *  \param zmin The lower limit of the third coordinate.
+ *  \param zmax The upper limit of the third coordinate.
+ *  \param e An error handler.
+ */
+void MFDrawInitializeCube(float alpha, float beta, float xmin, float xmax, float ymin, float ymax, float zmin, float zmax, MFErrorHandler e);
+
+/*! \fn void MFDrawInitializeNoCube(float alpha, float beta, float xmin, float xmax, float ymin, float ymax, float zmin, float zmax, MFErrorHandler e);
+ *  \brief Setes the view point and limits, initializes the graphics environment (the SH software renderer,
+ *              which is part of multifario), but does not draw the edges of a cube bounding the limits.
+ *
+ *  \param alpha The angle around the equator. Zero is the x-axis.
+ *  \param beta The angle up from the equator.
+ *  \param xmin The lower limit of the first coordinate.
+ *  \param xmax The upper limit of the first coordinate.
+ *  \param ymin The lower limit of the second coordinate.
+ *  \param ymax The upper limit of the second coordinate.
+ *  \param zmin The lower limit of the third coordinate.
+ *  \param zmax The upper limit of the third coordinate.
+ *  \param e An error handler.
+ */
+void MFDrawInitializeNoCube(float alpha, float beta, float xmin, float xmax, float ymin, float ymax, float zmin, float zmax, MFErrorHandler e);
+
+void MFDrawClose(MFErrorHandler e);
+void MFDrawClear(MFErrorHandler e);
+void MFDrawDisplay(MFErrorHandler e);
+void MFDrawInterval(MFChart chart, MFErrorHandler e);
+void MFDrawPolygon(MFChart chart, MFErrorHandler e);
+void MFDrawPolyhedron(MFChart chart, MFErrorHandler e);
+void MFDrawPolytope(MFPolytope P,MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDrawPolytopeTS(MFPolytope P,MFChart chart, MFErrorHandler e);
+void MFDraw1dChart(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDraw2dChart(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDraw3dChart(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDraw1dChartBoundary(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDraw1dChartBoundaryTS(MFChart chart, MFErrorHandler e);
+void MFDraw2dChartBoundary(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDraw2dChartBoundaryTS(MFChart chart, MFErrorHandler e);
+void MFDraw3dChartBoundary(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFTest3dChartBoundary(MFChart chart, MFErrorHandler e);
+void MFDrawChart(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDrawChartBoundaryTS(MFChart chart, MFErrorHandler e);
+void MFDrawChartBoundary(MFChart chart,MFChartState state, MFErrorHandler e);
+void MFDrawAtlas(MFAtlas A, MFErrorHandler e);
+void MFDrawAtlasOnce(MFAtlas A, MFErrorHandler e);
+void MFDrawMakeListOfTriangles(MFChart chart,int *ntri,int *mtri,double **ptri, double d, MFErrorHandler e);
+void MFDrawEnumPolytope(MFEnumPolytope EP,MFChart chart,MFChartState state, MFErrorHandler e);
+void MFMarkPoint(MFChart chart, MFNVector u, int i,MFChartState state, MFErrorHandler e);
+void MFMarkPointOnChart(MFChart chart,MFKVector s, int ms,MFChartState state, MFErrorHandler e);
+void MFDrawLineOnChart(MFChart chart,MFKVector s0,MFKVector s1,MFChartState state, MFErrorHandler e);
+void MFDrawEnumDualPolytope(MFEnumDualPolytope EP, MFErrorHandler e);
+void MFDrawLine(MFNVector u0,MFNVector u1,MFChartState state, MFErrorHandler e);
+void MFDrawChartTS(MFChart chart, MFErrorHandler e);
+void MFDrawAtlasTS(MFAtlas A, MFErrorHandler e);
+void MFDraw1dChartTS(MFChart chart, MFErrorHandler e);
+void MFDraw2dChartTS(MFChart chart, MFErrorHandler e);
+void MFDrawEnumPolytopeTS(MFEnumPolytope EP,MFChart chart, MFErrorHandler e);
+void MFDrawLineOnChartTS(MFChart chart,MFKVector s0,MFKVector s1, MFErrorHandler e);
+void MFPendulaPeriodic(int flag, MFErrorHandler e);
+void MFDrawEnumDualPolytopeEdges(MFEnumDualPolytope EP, MFErrorHandler e);
+int MFDrawGetData(MFChart chart,MFNVector u, double *l, MFErrorHandler e);
+
+/*! @} */
+
+/*! @} */
